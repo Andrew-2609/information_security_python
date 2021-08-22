@@ -1,7 +1,7 @@
 import os
 import time
 
-with open("hosts.txt") as file:
+with open("ping/hosts.txt") as file:
     dump = file.read()
     dump = dump.splitlines()
 
