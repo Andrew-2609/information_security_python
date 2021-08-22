@@ -1,4 +1,5 @@
 import os
+import time
 
 with open("hosts.txt") as file:
     dump = file.read()
@@ -9,3 +10,4 @@ with open("hosts.txt") as file:
         print('-' * 60)
         os.system("ping -c 2 {}".format(ip))
         print('-' * 60)
+        time.sleep(5)
