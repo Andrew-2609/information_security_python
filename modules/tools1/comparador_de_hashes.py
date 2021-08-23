@@ -16,6 +16,9 @@ def main():
     else:
         print(f"The file {file_a} is equal to {file_b}")
 
+    print("hash_one: {}".format(hash_one.hexdigest()))
+    print("hash_two: {}".format(hash_two.hexdigest()))
+
 
 if __name__ == '__main__':
     main()
