@@ -15,14 +15,14 @@ def main():
 
         connection.bind((host, port))
 
-        message = "\nServer: Hello, Client!"
-
         while 1:
             data, address = connection.recvfrom(4096)
 
             if data:
+                data = data.decode()
                 print("Server sending message...")
-                connection.sendto(data + (message.encode()), address)
+                message = "Server: Hello, {data}!".format(data=data)
+                connection.sendto(message.encode(), address)
 
 
 if __name__ == '__main__':

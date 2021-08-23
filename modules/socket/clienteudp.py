@@ -12,7 +12,7 @@ def main():
         print("Socket Client successfully created!")
         host = "localhost"
         port = 5432
-        message = input("Type a message to be sended to the server: ")
+        message = input("Type your name: ")
 
         try:
             connection.sendto(message.encode(), (host, port))
@@ -22,9 +22,9 @@ def main():
 
             print("\n" + ("-" * 60))
 
-            print("Client: " + data)
+            print("Client: Hi, my name is {}. Nice to meet you, Server!\n{data}".format(message, data=data))
         finally:
-            print("Client: Closing connection.")
+            print("\nClient: Closing connection.")
             connection.close()
 
 
